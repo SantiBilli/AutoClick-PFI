@@ -1,0 +1,18 @@
+AutoClick 8B - entrega33
+
+Modelo base: Qwen/Qwen3-8B
+https://huggingface.co/Qwen/Qwen3-8B
+Copyright 2024 Alibaba Cloud
+Licencia original: Apache License, Version 2.0.
+Se incluye su texto completo en LICENSE-Qwen3-8B.txt.
+
+Modificaciones del equipo de AutoClick:
+- Ajuste supervisado mediante QLoRA con ejemplos de AutoClick.
+- Integracion de los adaptadores entrenados en el modelo base.
+- Exportacion a GGUF y cuantizacion Q4_K_M para su ejecucion con Ollama.
+- Empaquetado con el identificador autoclick-8b:entrega33.
+
+Esta distribucion contiene un modelo modificado por AutoClick; no es una
+publicacion oficial de Qwen ni de Alibaba Cloud. Los derechos y avisos del
+modelo base se conservan. La licencia y este aviso acompanian al modelo;
+no establecen la licencia del resto del codigo de la aplicacion AutoClick.

@@ -1,0 +1,67 @@
+# La raiz usa una lista de inclusiones: ! permite versionar cada componente.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/Start-AutoClick.ps1
+!/Stop-AutoClick.ps1
+!/Autoclick-App/
+!/Autoclick-MCP/
+!/Autoclick-IA/
+!/Autoclick-Cloud/
+!/Autoclick-Web/
+!/Autoclick-Models/
+
+# Los blobs grandes de Ollama se incluyen en la carpeta y el ZIP de entrega,
+# pero se distribuyen por separado de Git. Sus manifiestos si se versionan.
+/Autoclick-Models/ollama-models/blobs/
+cdk.out/
+Autoclick-Cloud/.local/
+/Autoclick-Cloud/deployment.json
+/Autoclick-Cloud/cdk.local.json
+/Autoclick-Cloud/cdk.context.json
+/Autoclick-IA/dev/local-defaults.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencias de JavaScript y caches del frontend.
+# Conservar package.json y package-lock.json para reinstalarlas.
+node_modules/
+.npm/
+.pnpm-store/
+.vite/
+*.tsbuildinfo
+
+# Entornos virtuales, bytecode y caches de Python.
+# Conservar pyproject.toml y uv.lock para reinstalar las dependencias.
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.mypy_cache/
+.ruff_cache/
+
+# Compilaciones generadas localmente.
+build/
+dist/
+
+# Configuracion local y secretos. Las plantillas si se versionan.
+.env
+.env.*
+!.env.example
+
+# Logs, caches y archivos temporales locales.
+*.log
+*.log.*
+.cache/
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+Desktop.ini

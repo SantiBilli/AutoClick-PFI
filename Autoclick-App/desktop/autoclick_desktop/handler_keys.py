@@ -1,0 +1,17 @@
+HANDLER_KEYS = frozenset({
+    "execution.wait", "execution.stop", "execution.run_application", "browser.open",
+    "variable.create", "variable.update", "variable.delete",
+    "mouse.move", "mouse.click", "mouse.right_click", "mouse.double_click", "mouse.position",
+    "keyboard.write", "keyboard.press", "clipboard.write", "clipboard.read", "clipboard.clear",
+    "system.current_user", "system.current_date", "system.set_base_resolution", "flow.comment", "flow.group",
+    "flow.if", "flow.for_range", "flow.for_each", "flow.while", "flow.try_catch",
+    "window.focus", "window.wait", "window.move", "window.maximize", "window.minimize", "window.resize", "window.close",
+    "excel.open", "excel.create", "excel.read_cell", "excel.write_cell", "excel.save", "excel.close",
+    "excel.add_worksheet", "excel.delete_worksheet", "excel.rename_worksheet", "excel.activate_worksheet",
+    "excel.select_cell", "excel.select_range", "excel.clear_cell", "excel.read_range", "excel.write_range",
+    "excel.delete_empty_rows", "excel.find_values", "excel.last_row", "excel.last_column",
+    "file.read", "file.write", "file.copy", "file.move", "file.delete", "file.rename", "file.exists",
+    "folder.create", "folder.list_files", "folder.delete", "folder.move", "folder.rename", "folder.open",
+    "http.request", "workflow.run", "flow.go_to",
+    "vision.detect_element",
+})

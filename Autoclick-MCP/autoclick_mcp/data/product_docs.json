@@ -1,0 +1,178 @@
+{
+  "version": 2,
+  "documents": [
+    {
+      "id": "product",
+      "title": "AutoClick y sus bots",
+      "topics": [
+        "producto",
+        "autoclick",
+        "bots",
+        "automatización",
+        "rpa"
+      ],
+      "content": "AutoClick es una aplicación de escritorio para crear, revisar, validar, ejecutar y guardar bots de automatización mediante bloques. La IA usa Ollama para interpretar solicitudes y MCP para consultar conocimiento confiable del producto."
+    },
+    {
+      "id": "editor",
+      "title": "Editor de bots",
+      "topics": [
+        "editor",
+        "bloques",
+        "flujo",
+        "acciones"
+      ],
+      "content": "El editor representa un bot como un flujo ordenado de bloques. Las acciones disponibles se descubren desde el catálogo canónico. Cada bloque admite únicamente los parámetros y slots declarados por su esquema."
+    },
+    {
+      "id": "actions",
+      "title": "Acciones y bloques",
+      "topics": [
+        "acciones",
+        "bloques",
+        "catálogo",
+        "parámetros",
+        "slots",
+        "esquemas"
+      ],
+      "content": "Cada acción del catálogo representa un bloque que puede ordenarse o anidarse en el editor. Sus campos, valores por defecto, salidas y slots provienen del esquema canónico; MCP puede consultar sus detalles antes de proponer cambios."
+    },
+    {
+      "id": "proposal-review",
+      "title": "Revisión de propuestas de AutoClick AI",
+      "topics": [
+        "propuesta",
+        "revisión",
+        "aceptar",
+        "rechazar",
+        "comparación"
+      ],
+      "content": "AutoClick AI prepara propuestas sin modificar el bot automáticamente. En el Editor, la comparación muestra el bot original y el resultado propuesto; el usuario puede corregir parámetros, rechazar la propuesta o aceptar los cambios. En Inicio, la IA muestra un borrador para crear un bot y puede responder consultas o ajustar ese borrador; no hay un bot original abierto que comparar en pantalla dividida. Crear, aceptar o guardar un bot no lo ejecuta; la ejecución se inicia por separado."
+    },
+    {
+      "id": "validation",
+      "title": "Validación del editor",
+      "topics": [
+        "validación",
+        "errores",
+        "advertencias",
+        "parámetros"
+      ],
+      "content": "La validación comprueba estructura, acciones, parámetros, referencias, variables y seguridad de ejecución. Los errores impiden aceptar y ejecutar. Las advertencias permiten aceptar, pero impiden ejecutar hasta ser corregidas."
+    },
+    {
+      "id": "execution",
+      "title": "Ejecución segura",
+      "topics": [
+        "ejecutar",
+        "ejecuta",
+        "ejecución",
+        "propuesta",
+        "estado",
+        "no ejecuta"
+      ],
+      "content": "Ejecutar propuesta prueba el bot propuesto sin aceptarlo. Solo se habilita cuando no hay errores ni advertencias. Si no ejecuta, revisa primero los errores y advertencias de validación y el estado del servicio de ejecución. La ejecución informa su estado y no reemplaza la aprobación humana."
+    },
+    {
+      "id": "persistence",
+      "title": "Guardado y recuperación",
+      "topics": [
+        "persistencia",
+        "guardado",
+        "recarga",
+        "restaurar",
+        "propuesta pendiente"
+      ],
+      "content": "Las propuestas pendientes se guardan junto al bot y pueden restaurarse después de recargar. AutoClick vuelve a verificar la revisión base y la equivalencia entre operaciones y resultado. Una propuesta obsoleta o inválida se descarta sin cambiar el flujo."
+    },
+    {
+      "id": "required-values",
+      "title": "Datos externos obligatorios",
+      "topics": [
+        "ruta",
+        "url",
+        "hoja",
+        "aplicación",
+        "ventana",
+        "aclaración"
+      ],
+      "content": "La IA puede crear un borrador con parametros externos pendientes cuando el objetivo ya esta claro. El valor JSON {\"$pending\":true} indica que ese campo debe completarse en el editor antes de ejecutar. No es un dato real ni un valor por defecto. El borrador se puede aceptar, editar y guardar; la ejecucion queda bloqueada hasta resolver todos los pendientes. Las variables internas y las referencias del flujo deben ser validas. No se inventan coordenadas ni rutas para simular un bot completo."
+    },
+    {
+      "id": "common-failures",
+      "title": "Troubleshooting y problemas frecuentes",
+      "topics": [
+        "troubleshooting",
+        "fallos",
+        "error",
+        "ollama",
+        "conflicto",
+        "propuesta inválida",
+        "no funciona"
+      ],
+      "content": "Si el servicio local o el modelo no están disponibles, la interfaz muestra una acción de recuperación. Si el bot cambió en disco, debe recargarse. Una propuesta que no coincide con sus operaciones se rechaza y nunca se guarda ni ejecuta."
+    },
+    {
+      "id": "file-destinations",
+      "title": "Copiar, mover y sobrescribir archivos",
+      "topics": [
+        "file.copy",
+        "file.move",
+        "archivo",
+        "destino",
+        "sobrescribir"
+      ],
+      "content": "file.copy conserva el archivo original; file.move lo traslada y deja de estar en el origen. Ambos requieren source y destination, rutas de archivo completas. overwrite es opcional y su default es false: si ya existe el destino, la operacion falla, no lo sobrescribe automaticamente. overwrite=true permite reemplazar un archivo destino. La carpeta padre del destino debe existir, el origen debe existir y origen y destino deben ser distintos. La existencia del destino se comprueba aunque el archivo este vacio: un archivo de cero bytes tambien causa error con overwrite=false. Activar overwrite solo permite reemplazar; no garantiza exito ante falta de permisos u otros errores."
+    },
+    {
+      "id": "keyboard-focus",
+      "title": "Teclado, foco y portapapeles",
+      "topics": [
+        "keyboard.write",
+        "clipboard.write",
+        "ventana",
+        "foco",
+        "texto"
+      ],
+      "content": "keyboard.write introduce su parametro text en el control que tiene el foco de teclado. No elige una ventana por si mismo ni toma su texto del portapapeles. Es necesario enfocar un campo editable en la aplicacion destino y que admita entrada de teclado; no se garantiza compatibilidad con cualquier ventana. Para ciertos caracteres el runtime usa temporalmente pegar y restaura el portapapeles. clipboard.write solamente establece el contenido del portapapeles; no escribe en el campo activo ni pega por si mismo. clipboard.read lee el texto actual y lo publica en outputVariable; no copia una seleccion ni pega nada. Otras aplicaciones y el usuario tambien pueden cambiar el portapapeles: encontrar cierto texto alli no demuestra que se ejecuto el bot."
+    },
+    {
+      "id": "excel-requirements",
+      "title": "Libro y hoja de Excel",
+      "topics": [
+        "excel.open",
+        "excel.writeCell",
+        "excel.save",
+        "hoja",
+        "Control",
+        "requisitos"
+      ],
+      "content": "Los bloques de Excel requieren Windows con Microsoft Excel instalado. excel.open abre el archivo indicado y declara workbookVariable mediante outputVariable para los siguientes bloques; el usuario no necesita abrirlo previamente ni tener Excel como ventana activa. La ruta debe existir y ser accesible. excel.writeCell necesita que la hoja indicada exista; una hoja ausente produce EXCEL_WORKSHEET_NOT_FOUND, no se crea automaticamente. Para guardar hacen falta permisos de escritura y un libro que permita guardar. Un bloque flow.comment solo es una anotacion y no comprueba requisitos. La validacion exige una unica celda A1 para el campo cell de excel.readCell y excel.writeCell; no admite rangos como A1:B3. Los rangos se configuran en el campo range de excel.readRange o excel.writeRange."
+    },
+    {
+      "id": "network-and-execution",
+      "title": "Red y estado de una propuesta",
+      "topics": [
+        "http.request",
+        "HTTP",
+        "ejecutar",
+        "propuesta",
+        "WhatsApp",
+        "CAPTCHA"
+      ],
+      "content": "La automatizacion no se limita a archivos locales: http.request realiza solicitudes de red a la URL configurada cuando se ejecuta el bot. timeoutMs esta expresado en milisegundos, no segundos; outputVariable es obligatorio. La IA solo genera propuestas; generar, mostrar o aceptar un bot no ejecuta sus bloques ni hace la peticion HTTP. El usuario debe iniciar la ejecucion. El catalogo actual no contiene un conector nativo de WhatsApp ni un bloque que resuelva CAPTCHA. Un servicio externo requiere su API documentada, acceso y parametros; no se debe inventar un conector."
+    },
+    {
+      "id": "vision-result",
+      "title": "Detección OCR: parámetros, resultado y errores",
+      "topics": ["vision.detectElement", "detectar", "deteccion", "OCR", "coordenadas", "vision"],
+      "content": "vision.detectElement requiere text y outputVariable: ambos son obligatorios. Busca texto conocido, no extrae automaticamente un precio desconocido ni resuelve CAPTCHA. scope, region x/y/width/height, confianza, timeout, pollIntervalMs y matchType son opciones; timeout usa segundos y pollIntervalMs milisegundos. El resultado es un objeto con encontrado, x, y, ancho, alto, centroX, centroY, confianza y textoDetectado. Si vence el tiempo sin coincidencia, produce VISION_ELEMENT_NOT_FOUND; no devuelve null ni un mensaje como resultado. No hace clic. Las coordenadas del centro pueden usarse en una accion de mouse posterior; OCR puede fallar y depende de texto visible, zoom y resolucion."
+    },
+    {
+      "id": "text-file-limits",
+      "title": "Leer archivos de texto y recorrer carpetas",
+      "topics": ["file.read", "folder.listFiles", "archivo", "PDF", "texto", "lineas"],
+      "content": "file.read lee todo un archivo de texto con la codificacion indicada y publica un string en outputVariable. No interpreta PDF, no extrae su capa de texto y no divide automaticamente el contenido en lineas. Un PDF sigue siendo un formato distinto de un archivo de texto aunque muestre texto seleccionable. folder.listFiles publica los archivos de una carpeta; flow.forEach recorre una lista JSON. No se debe prometer leer cada linea de un string con forEach sin una conversion soportada a lista. El catalogo actual no ofrece un bloque de lectura o extraccion de PDF."
+    }
+  ]
+}

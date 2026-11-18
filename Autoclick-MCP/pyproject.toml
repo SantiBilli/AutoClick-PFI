@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autoclick-mcp"
+version = "0.1.0"
+description = "Model Context Protocol (MCP) server for AutoClick"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.7",
+]
+
+[project.scripts]
+autoclick-mcp = "autoclick_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["autoclick_mcp"]
+include = ["autoclick_mcp/data/*.json"]

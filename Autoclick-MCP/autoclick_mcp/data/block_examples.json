@@ -1,0 +1,143 @@
+[
+  {
+    "id": "browser_search_and_open",
+    "title": "Búsqueda y navegación web secuencial",
+    "description": "Abre una búsqueda en Google y posteriormente abre otra pestaña con un sitio específico.",
+    "actionIds": [
+      "browser.open",
+      "execution.wait"
+    ],
+    "nodes": [
+      {
+        "type": "browser.open",
+        "params": {
+          "url": "https://www.google.com/search?q=pwc+argentina"
+        },
+        "slots": {}
+      },
+      {
+        "type": "execution.wait",
+        "params": {
+          "milliseconds": 2000
+        },
+        "slots": {}
+      },
+      {
+        "type": "browser.open",
+        "params": {
+          "url": "https://dolarhoy.com"
+        },
+        "slots": {}
+      }
+    ]
+  },
+  {
+    "id": "excel_read_write_flow",
+    "title": "Lectura y escritura en Excel con guardado",
+    "description": "Abre un archivo de Excel, lee una celda, escribe el resultado en otra y guarda los cambios.",
+    "actionIds": [
+      "excel.open",
+      "excel.readCell",
+      "excel.writeCell",
+      "excel.save"
+    ],
+    "nodes": [
+      {
+        "type": "excel.open",
+        "params": {
+          "path": "C:\\datos\\planilla.xlsx",
+          "outputVariable": "libro"
+        },
+        "slots": {}
+      },
+      {
+        "type": "excel.readCell",
+        "params": {
+          "workbookVariable": "libro",
+          "sheet": "Hoja1",
+          "cell": "A1",
+          "outputVariable": "dato"
+        },
+        "slots": {}
+      },
+      {
+        "type": "excel.writeCell",
+        "params": {
+          "workbookVariable": "libro",
+          "sheet": "Hoja1",
+          "cell": "B1",
+          "value": "Procesado"
+        },
+        "slots": {}
+      },
+      {
+        "type": "excel.save",
+        "params": {
+          "workbookVariable": "libro"
+        },
+        "slots": {}
+      }
+    ]
+  },
+  {
+    "id": "conditional_loop_flow",
+    "title": "Bucle de rango con condición",
+    "description": "Itera sobre un rango de números y ejecuta acciones condicionales según el valor actual.",
+    "actionIds": [
+      "variable.create",
+      "flow.forRange",
+      "flow.if",
+      "execution.wait"
+    ],
+    "nodes": [
+      {
+        "type": "variable.create",
+        "params": {
+          "name": "contador",
+          "value": "0"
+        },
+        "slots": {}
+      },
+      {
+        "type": "flow.forRange",
+        "params": {
+          "start": 1,
+          "end": 5,
+          "step": 1,
+          "currentVariable": "i",
+          "maxIterations": 10
+        },
+        "slots": {
+          "body": [
+            {
+              "type": "flow.if",
+              "params": {
+                "condition": {
+                  "clauses": [
+                    {
+                      "left": "{{i}}",
+                      "operator": "gte",
+                      "right": 3
+                    }
+                  ]
+                }
+              },
+              "slots": {
+                "then": [
+                  {
+                    "type": "execution.wait",
+                    "params": {
+                      "milliseconds": 1000
+                    },
+                    "slots": {}
+                  }
+                ],
+                "else": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

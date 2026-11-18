@@ -1,0 +1,22 @@
+[
+  {
+    "id": "automation",
+    "label": "Crear mi primera automatización",
+    "message": "Creá un bot de ejemplo válido. Elegí vos qué hace."
+  },
+  {
+    "id": "catalog",
+    "label": "Ver bloques disponibles",
+    "message": "Ver bloques disponibles"
+  },
+  {
+    "id": "excel",
+    "label": "¿Cómo automatizar tareas en Excel?",
+    "message": "¿Cómo automatizar tareas en Excel?"
+  },
+  {
+    "id": "mouseKeyboard",
+    "label": "¿Cómo automatizar clicks y teclado?",
+    "message": "¿Cómo automatizar clicks y teclado?"
+  }
+]

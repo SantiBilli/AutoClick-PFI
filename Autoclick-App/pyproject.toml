@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autoclick-desktop"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "pydantic>=2.11,<3",
+  "pyautogui>=0.9.54,<1",
+  "pyperclip>=1.9,<2",
+  "pywin32>=308,<400; sys_platform == 'win32'",
+  "pywebview>=5.4,<6",
+  "pillow>=10.0,<13",
+  "pytesseract>=0.3.10,<1",
+  "rapidfuzz>=3.0.0,<4",
+]
+
+[tool.hatch.build]
+exclude = [
+  "**/.env",
+  "**/.env.*",
+  "!**/.env.example",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["desktop/autoclick_desktop"]
+artifacts = [
+  "desktop/autoclick_desktop/data/action_registry.json",
+  "desktop/autoclick_desktop/data/ai_contract.json",
+]

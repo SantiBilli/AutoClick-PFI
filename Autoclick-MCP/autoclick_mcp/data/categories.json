@@ -1,0 +1,169 @@
+[
+  {
+    "id": "execution",
+    "name": "Ejecución",
+    "actionCount": 3,
+    "actionIds": [
+      "execution.wait",
+      "execution.stop",
+      "execution.runApplication"
+    ]
+  },
+  {
+    "id": "variables",
+    "name": "Variables",
+    "actionCount": 3,
+    "actionIds": [
+      "variable.create",
+      "variable.update",
+      "variable.delete"
+    ]
+  },
+  {
+    "id": "mouse",
+    "name": "Mouse",
+    "actionCount": 5,
+    "actionIds": [
+      "mouse.move",
+      "mouse.click",
+      "mouse.doubleClick",
+      "mouse.position",
+      "mouse.rightClick"
+    ]
+  },
+  {
+    "id": "keyboard",
+    "name": "Teclado",
+    "actionCount": 2,
+    "actionIds": [
+      "keyboard.write",
+      "keyboard.press"
+    ]
+  },
+  {
+    "id": "excel",
+    "name": "Excel",
+    "actionCount": 19,
+    "actionIds": [
+      "excel.open",
+      "excel.readCell",
+      "excel.writeCell",
+      "excel.save",
+      "excel.close",
+      "excel.create",
+      "excel.addWorksheet",
+      "excel.deleteWorksheet",
+      "excel.renameWorksheet",
+      "excel.activateWorksheet",
+      "excel.selectCell",
+      "excel.selectRange",
+      "excel.clearCell",
+      "excel.readRange",
+      "excel.writeRange",
+      "excel.deleteEmptyRows",
+      "excel.findValues",
+      "excel.lastRow",
+      "excel.lastColumn"
+    ]
+  },
+  {
+    "id": "browser",
+    "name": "Navegador",
+    "actionCount": 1,
+    "actionIds": [
+      "browser.open"
+    ]
+  },
+  {
+    "id": "window",
+    "name": "Ventanas",
+    "actionCount": 7,
+    "actionIds": [
+      "window.focus",
+      "window.wait",
+      "window.move",
+      "window.maximize",
+      "window.minimize",
+      "window.resize",
+      "window.close"
+    ]
+  },
+  {
+    "id": "file",
+    "name": "Archivos",
+    "actionCount": 7,
+    "actionIds": [
+      "file.read",
+      "file.write",
+      "file.copy",
+      "file.move",
+      "file.delete",
+      "file.rename",
+      "file.exists"
+    ]
+  },
+  {
+    "id": "folder",
+    "name": "Carpetas",
+    "actionCount": 6,
+    "actionIds": [
+      "folder.create",
+      "folder.listFiles",
+      "folder.delete",
+      "folder.move",
+      "folder.rename",
+      "folder.open"
+    ]
+  },
+  {
+    "id": "clipboard",
+    "name": "Portapapeles",
+    "actionCount": 3,
+    "actionIds": [
+      "clipboard.write",
+      "clipboard.read",
+      "clipboard.clear"
+    ]
+  },
+  {
+    "id": "system",
+    "name": "Sistema",
+    "actionCount": 3,
+    "actionIds": [
+      "system.currentUser",
+      "system.currentDate",
+      "system.setBaseResolution"
+    ]
+  },
+  {
+    "id": "flow",
+    "name": "Flujo",
+    "actionCount": 8,
+    "actionIds": [
+      "flow.comment",
+      "flow.group",
+      "flow.if",
+      "flow.forRange",
+      "flow.forEach",
+      "flow.while",
+      "flow.tryCatch",
+      "flow.goTo"
+    ]
+  },
+  {
+    "id": "http",
+    "name": "HTTP",
+    "actionCount": 1,
+    "actionIds": [
+      "http.request"
+    ]
+  },
+  {
+    "id": "workflow",
+    "name": "Flujos",
+    "actionCount": 1,
+    "actionIds": [
+      "workflow.run"
+    ]
+  }
+]

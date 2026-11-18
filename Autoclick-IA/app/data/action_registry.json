@@ -1,0 +1,347 @@
+{
+  "actions": [
+    {
+      "id": "execution.wait",
+      "category": "execution",
+      "categoryName": "Ejecución",
+      "title": "Esperar",
+      "description": "Pausa el flujo durante un tiempo definido.",
+      "icon": "Clock3",
+      "fields": [
+        {
+          "name": "milliseconds",
+          "label": "Milisegundos",
+          "type": "integer",
+          "required": true,
+          "min": 0,
+          "max": 3600000
+        }
+      ],
+      "defaults": { "milliseconds": 1000 },
+      "output": null,
+      "outputs": [],
+      "handlerKey": "execution.wait"
+    },
+    {
+      "id": "variable.create",
+      "category": "variables",
+      "categoryName": "Variables",
+      "title": "Crear variable",
+      "description": "Crea una variable para usarla en los siguientes bloques.",
+      "icon": "Variable",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nombre",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        { "name": "value", "label": "Valor", "type": "json", "required": false }
+      ],
+      "defaults": { "value": "" },
+      "output": { "field": "name", "type": "value" },
+      "outputs": [{ "field": "name", "type": "value" }],
+      "handlerKey": "variable.create"
+    },
+    {
+      "id": "mouse.move",
+      "category": "mouse",
+      "categoryName": "Mouse",
+      "title": "Mover mouse",
+      "description": "Mueve el puntero a una posición de la pantalla.",
+      "icon": "MousePointer2",
+      "fields": [
+        { "name": "x", "label": "X", "type": "integer", "required": true },
+        { "name": "y", "label": "Y", "type": "integer", "required": true },
+        {
+          "name": "durationMs",
+          "label": "Duración (ms)",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 3600000
+        }
+      ],
+      "defaults": { "durationMs": 0 },
+      "output": null,
+      "outputs": [],
+      "handlerKey": "mouse.move"
+    },
+    {
+      "id": "mouse.click",
+      "category": "mouse",
+      "categoryName": "Mouse",
+      "title": "Click",
+      "description": "Hace click, opcionalmente en una posición específica.",
+      "icon": "Mouse",
+      "fields": [
+        {
+          "name": "button",
+          "label": "Botón",
+          "type": "select",
+          "required": false,
+          "options": ["left", "right", "middle"]
+        },
+        { "name": "x", "label": "X", "type": "integer", "required": false },
+        { "name": "y", "label": "Y", "type": "integer", "required": false }
+      ],
+      "defaults": { "button": "left" },
+      "output": null,
+      "outputs": [],
+      "handlerKey": "mouse.click"
+    },
+    {
+      "id": "mouse.doubleClick",
+      "category": "mouse",
+      "categoryName": "Mouse",
+      "title": "Doble Click",
+      "description": "Hace doble click, opcionalmente en una posición específica.",
+      "icon": "Mouse",
+      "fields": [
+        {
+          "name": "button",
+          "label": "Botón",
+          "type": "select",
+          "required": false,
+          "options": ["left", "right", "middle"]
+        },
+        { "name": "x", "label": "X", "type": "integer", "required": false },
+        { "name": "y", "label": "Y", "type": "integer", "required": false },
+        {
+          "name": "intervalMs",
+          "label": "Intervalo (ms)",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 3600000
+        }
+      ],
+      "defaults": { "button": "left", "intervalMs": 100 },
+      "output": null,
+      "outputs": [],
+      "handlerKey": "mouse.double_click"
+    },
+    {
+      "id": "keyboard.write",
+      "category": "keyboard",
+      "categoryName": "Teclado",
+      "title": "Escribir texto",
+      "description": "Escribe texto usando el teclado.",
+      "icon": "Keyboard",
+      "fields": [
+        { "name": "text", "label": "Texto", "type": "multiline", "required": true },
+        {
+          "name": "intervalMs",
+          "label": "Intervalo (ms)",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 3600000
+        }
+      ],
+      "defaults": { "intervalMs": 0 },
+      "output": null,
+      "outputs": [],
+      "handlerKey": "keyboard.write"
+    },
+    {
+      "id": "keyboard.press",
+      "category": "keyboard",
+      "categoryName": "Teclado",
+      "title": "Presionar tecla",
+      "description": "Presiona una tecla o combinación compatible.",
+      "icon": "Keyboard",
+      "fields": [{ "name": "key", "label": "Tecla", "type": "key", "required": true }],
+      "defaults": {},
+      "output": null,
+      "outputs": [],
+      "handlerKey": "keyboard.press"
+    },
+    {
+      "id": "excel.open",
+      "category": "excel",
+      "categoryName": "Excel",
+      "title": "Abrir libro",
+      "description": "Abre un libro de Excel y guarda su referencia.",
+      "icon": "FileSpreadsheet",
+      "fields": [
+        { "name": "path", "label": "Archivo", "type": "file", "required": true },
+        {
+          "name": "outputVariable",
+          "label": "Variable de salida",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      ],
+      "defaults": {},
+      "output": { "field": "outputVariable", "type": "workbook" },
+      "outputs": [{ "field": "outputVariable", "type": "workbook" }],
+      "handlerKey": "excel.open",
+      "platform": "windows"
+    },
+    {
+      "id": "excel.readCell",
+      "category": "excel",
+      "categoryName": "Excel",
+      "title": "Leer celda",
+      "description": "Lee una celda y guarda el resultado en una variable.",
+      "icon": "Sheet",
+      "fields": [
+        {
+          "name": "workbookVariable",
+          "label": "Libro",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        { "name": "sheet", "label": "Hoja", "type": "text", "required": true },
+        { "name": "cell", "label": "Celda", "type": "text", "required": true },
+        {
+          "name": "outputVariable",
+          "label": "Variable de salida",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      ],
+      "defaults": {},
+      "output": { "field": "outputVariable", "type": "value" },
+      "outputs": [{ "field": "outputVariable", "type": "value" }],
+      "handlerKey": "excel.read_cell",
+      "platform": "windows"
+    },
+    {
+      "id": "excel.writeCell",
+      "category": "excel",
+      "categoryName": "Excel",
+      "title": "Escribir celda",
+      "description": "Escribe un valor en una celda del libro.",
+      "icon": "Sheet",
+      "fields": [
+        {
+          "name": "workbookVariable",
+          "label": "Libro",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        { "name": "sheet", "label": "Hoja", "type": "text", "required": true },
+        { "name": "cell", "label": "Celda", "type": "text", "required": true },
+        { "name": "value", "label": "Valor", "type": "text", "required": true }
+      ],
+      "defaults": {},
+      "output": null,
+      "outputs": [],
+      "handlerKey": "excel.write_cell",
+      "platform": "windows"
+    },
+    {
+      "id": "excel.save",
+      "category": "excel",
+      "categoryName": "Excel",
+      "title": "Guardar libro",
+      "description": "Guarda el libro abierto, opcionalmente en otro archivo.",
+      "icon": "Save",
+      "fields": [
+        {
+          "name": "workbookVariable",
+          "label": "Libro",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        { "name": "path", "label": "Destino", "type": "file", "required": false }
+      ],
+      "defaults": {},
+      "output": null,
+      "outputs": [],
+      "handlerKey": "excel.save",
+      "platform": "windows"
+    },
+    {
+      "id": "excel.close",
+      "category": "excel",
+      "categoryName": "Excel",
+      "title": "Cerrar libro",
+      "description": "Cierra el libro y permite guardar los cambios.",
+      "icon": "X",
+      "fields": [
+        {
+          "name": "workbookVariable",
+          "label": "Libro",
+          "type": "variable",
+          "required": true,
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        { "name": "saveChanges", "label": "Guardar cambios", "type": "boolean", "required": false }
+      ],
+      "defaults": { "saveChanges": false },
+      "output": null,
+      "outputs": [],
+      "handlerKey": "excel.close",
+      "platform": "windows"
+    },
+    {"id":"execution.stop","category":"execution","categoryName":"Ejecución","title":"Detener","description":"Detiene correctamente la ejecución actual.","icon":"X","fields":[],"defaults":{},"output":null,"outputs":[],"handlerKey":"execution.stop"},
+    {"id":"execution.runApplication","category":"execution","categoryName":"Ejecución","title":"Ejecutar aplicación","description":"Inicia una aplicación local.","icon":"Play","fields":[{"name":"path","label":"Aplicación","type":"file","required":true},{"name":"arguments","label":"Argumentos","type":"text","required":false}],"defaults":{"arguments":""},"output":null,"outputs":[],"handlerKey":"execution.run_application"},
+    {"id":"browser.open","category":"browser","categoryName":"Navegador","title":"Abrir URL","description":"Abre una URL en el navegador predeterminado.","icon":"Globe","fields":[{"name":"url","label":"URL","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"browser.open"},
+    {"id":"window.focus","category":"window","categoryName":"Ventanas","title":"Enfocar ventana","description":"Busca una ventana por título y la trae al frente.","icon":"AppWindow","fields":[{"name":"title","label":"Título","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"window.focus","platform":"windows"},
+    {"id":"window.wait","category":"window","categoryName":"Ventanas","title":"Esperar ventana","description":"Espera hasta que aparezca una ventana.","icon":"Clock3","fields":[{"name":"title","label":"Título","type":"text","required":true},{"name":"timeoutMs","label":"Tiempo límite (ms)","type":"integer","required":true,"min":1,"max":3600000},{"name":"pollIntervalMs","label":"Intervalo (ms)","type":"integer","required":false,"min":10,"max":10000}],"defaults":{"timeoutMs":30000,"pollIntervalMs":100},"output":null,"outputs":[],"handlerKey":"window.wait","platform":"windows"},
+    {"id":"window.move","category":"window","categoryName":"Ventanas","title":"Mover ventana","description":"Mueve una ventana a coordenadas de pantalla.","icon":"AppWindow","fields":[{"name":"title","label":"Título","type":"text","required":true},{"name":"x","label":"X","type":"integer","required":true},{"name":"y","label":"Y","type":"integer","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"window.move","platform":"windows"},
+    {"id":"window.maximize","category":"window","categoryName":"Ventanas","title":"Maximizar ventana","description":"Maximiza una ventana.","icon":"AppWindow","fields":[{"name":"title","label":"Título","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"window.maximize","platform":"windows"},
+    {"id":"window.minimize","category":"window","categoryName":"Ventanas","title":"Minimizar ventana","description":"Minimiza una ventana.","icon":"AppWindow","fields":[{"name":"title","label":"Título","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"window.minimize","platform":"windows"},
+    {"id":"window.resize","category":"window","categoryName":"Ventanas","title":"Redimensionar ventana","description":"Cambia el tamaño de una ventana.","icon":"AppWindow","fields":[{"name":"title","label":"Título","type":"text","required":true},{"name":"width","label":"Ancho","type":"integer","required":true,"min":1},{"name":"height","label":"Alto","type":"integer","required":true,"min":1}],"defaults":{},"output":null,"outputs":[],"handlerKey":"window.resize","platform":"windows"},
+    {"id":"window.close","category":"window","categoryName":"Ventanas","title":"Cerrar ventana","description":"Cierra una ventana.","icon":"X","fields":[{"name":"title","label":"Título","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"window.close","platform":"windows"},
+
+    {"id":"excel.create","category":"excel","categoryName":"Excel","title":"Crear libro","description":"Crea un libro nuevo y publica su referencia.","icon":"FileSpreadsheet","fields":[{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"workbook"},"outputs":[{"field":"outputVariable","type":"workbook"}],"handlerKey":"excel.create","platform":"windows"},
+    {"id":"excel.addWorksheet","category":"excel","categoryName":"Excel","title":"Agregar hoja","description":"Agrega una hoja al libro.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"name","label":"Nombre","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.add_worksheet","platform":"windows"},
+    {"id":"excel.deleteWorksheet","category":"excel","categoryName":"Excel","title":"Eliminar hoja","description":"Elimina una hoja del libro.","icon":"Trash2","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.delete_worksheet","platform":"windows"},
+    {"id":"excel.renameWorksheet","category":"excel","categoryName":"Excel","title":"Renombrar hoja","description":"Cambia el nombre de una hoja.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"newName","label":"Nuevo nombre","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.rename_worksheet","platform":"windows"},
+    {"id":"excel.activateWorksheet","category":"excel","categoryName":"Excel","title":"Activar hoja","description":"Activa una hoja del libro.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.activate_worksheet","platform":"windows"},
+    {"id":"excel.selectCell","category":"excel","categoryName":"Excel","title":"Seleccionar celda","description":"Selecciona una celda del libro.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"cell","label":"Celda","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.select_cell","platform":"windows"},
+    {"id":"excel.selectRange","category":"excel","categoryName":"Excel","title":"Seleccionar rango","description":"Selecciona un rango del libro.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"range","label":"Rango","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.select_range","platform":"windows"},
+    {"id":"excel.clearCell","category":"excel","categoryName":"Excel","title":"Limpiar celda","description":"Limpia el contenido de una celda.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"cell","label":"Celda","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.clear_cell","platform":"windows"},
+    {"id":"excel.readRange","category":"excel","categoryName":"Excel","title":"Leer rango","description":"Lee un rango como matriz bidimensional.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"range","label":"Rango","type":"text","required":true},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"excel.read_range","platform":"windows"},
+    {"id":"excel.writeRange","category":"excel","categoryName":"Excel","title":"Escribir rango","description":"Escribe una matriz en un rango.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"range","label":"Rango","type":"text","required":true},{"name":"value","label":"Valores","type":"json","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.write_range","platform":"windows"},
+    {"id":"excel.deleteEmptyRows","category":"excel","categoryName":"Excel","title":"Eliminar filas vacías","description":"Elimina las filas vacías usadas de una hoja.","icon":"Trash2","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"excel.delete_empty_rows","platform":"windows"},
+    {"id":"excel.findValues","category":"excel","categoryName":"Excel","title":"Buscar valores","description":"Busca un valor y devuelve direcciones A1.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"value","label":"Valor","type":"json","required":true},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"excel.find_values","platform":"windows"},
+    {"id":"excel.lastRow","category":"excel","categoryName":"Excel","title":"Última fila","description":"Devuelve la última fila usada.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"excel.last_row","platform":"windows"},
+    {"id":"excel.lastColumn","category":"excel","categoryName":"Excel","title":"Última columna","description":"Devuelve la última columna usada.","icon":"Sheet","fields":[{"name":"workbookVariable","label":"Libro","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"sheet","label":"Hoja","type":"text","required":true},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"excel.last_column","platform":"windows"},
+
+    {"id":"file.read","category":"file","categoryName":"Archivos","title":"Leer archivo","description":"Lee un archivo de texto.","icon":"File","fields":[{"name":"path","label":"Ruta","type":"file","required":true},{"name":"encoding","label":"Codificación","type":"select","required":false,"options":["utf-8","utf-8-sig","latin-1"]},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{"encoding":"utf-8"},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"file.read"},
+    {"id":"file.write","category":"file","categoryName":"Archivos","title":"Escribir archivo","description":"Escribe un archivo de texto.","icon":"File","fields":[{"name":"path","label":"Ruta","type":"file","required":true},{"name":"content","label":"Contenido","type":"multiline","required":true},{"name":"encoding","label":"Codificación","type":"select","required":false,"options":["utf-8","utf-8-sig","latin-1"]},{"name":"overwrite","label":"Sobrescribir","type":"boolean","required":false}],"defaults":{"encoding":"utf-8","overwrite":false},"output":null,"outputs":[],"handlerKey":"file.write"},
+    {"id":"file.copy","category":"file","categoryName":"Archivos","title":"Copiar archivo","description":"Copia un archivo a otra ruta.","icon":"File","fields":[{"name":"source","label":"Origen","type":"file","required":true},{"name":"destination","label":"Destino","type":"file","required":true},{"name":"overwrite","label":"Sobrescribir","type":"boolean","required":false}],"defaults":{"overwrite":false},"output":null,"outputs":[],"handlerKey":"file.copy"},
+    {"id":"file.move","category":"file","categoryName":"Archivos","title":"Mover archivo","description":"Mueve un archivo a otra ruta.","icon":"File","fields":[{"name":"source","label":"Origen","type":"file","required":true},{"name":"destination","label":"Destino","type":"file","required":true},{"name":"overwrite","label":"Sobrescribir","type":"boolean","required":false}],"defaults":{"overwrite":false},"output":null,"outputs":[],"handlerKey":"file.move"},
+    {"id":"file.delete","category":"file","categoryName":"Archivos","title":"Eliminar archivo","description":"Elimina un archivo.","icon":"Trash2","fields":[{"name":"path","label":"Ruta","type":"file","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"file.delete"},
+    {"id":"file.rename","category":"file","categoryName":"Archivos","title":"Renombrar archivo","description":"Renombra un archivo usando una ruta completa.","icon":"File","fields":[{"name":"source","label":"Origen","type":"file","required":true},{"name":"destination","label":"Destino","type":"file","required":true},{"name":"overwrite","label":"Sobrescribir","type":"boolean","required":false}],"defaults":{"overwrite":false},"output":null,"outputs":[],"handlerKey":"file.rename"},
+    {"id":"file.exists","category":"file","categoryName":"Archivos","title":"Existe archivo","description":"Indica si existe un archivo.","icon":"File","fields":[{"name":"path","label":"Ruta","type":"file","required":true},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"file.exists"},
+    {"id":"folder.create","category":"folder","categoryName":"Carpetas","title":"Crear carpeta","description":"Crea una carpeta y sus directorios padre.","icon":"Folder","fields":[{"name":"path","label":"Ruta","type":"file","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"folder.create"},
+    {"id":"folder.listFiles","category":"folder","categoryName":"Carpetas","title":"Listar archivos","description":"Lista nombres de archivos inmediatos en orden estable.","icon":"Folder","fields":[{"name":"path","label":"Ruta","type":"file","required":true},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"folder.list_files"},
+    {"id":"folder.delete","category":"folder","categoryName":"Carpetas","title":"Eliminar carpeta recursivamente","description":"Elimina una carpeta y todo su contenido.","icon":"Trash2","fields":[{"name":"path","label":"Ruta","type":"file","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"folder.delete"},
+    {"id":"folder.move","category":"folder","categoryName":"Carpetas","title":"Mover carpeta","description":"Mueve una carpeta a otra ruta.","icon":"Folder","fields":[{"name":"source","label":"Origen","type":"file","required":true},{"name":"destination","label":"Destino","type":"file","required":true},{"name":"overwrite","label":"Sobrescribir","type":"boolean","required":false}],"defaults":{"overwrite":false},"output":null,"outputs":[],"handlerKey":"folder.move"},
+    {"id":"folder.rename","category":"folder","categoryName":"Carpetas","title":"Renombrar carpeta","description":"Renombra una carpeta usando una ruta completa.","icon":"Folder","fields":[{"name":"source","label":"Origen","type":"file","required":true},{"name":"destination","label":"Destino","type":"file","required":true},{"name":"overwrite","label":"Sobrescribir","type":"boolean","required":false}],"defaults":{"overwrite":false},"output":null,"outputs":[],"handlerKey":"folder.rename"},
+    {"id":"folder.open","category":"folder","categoryName":"Carpetas","title":"Abrir carpeta","description":"Abre una carpeta en el explorador del sistema.","icon":"Folder","fields":[{"name":"path","label":"Ruta","type":"file","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"folder.open"},
+
+    {"id":"variable.update","category":"variables","categoryName":"Variables","title":"Actualizar variable","description":"Actualiza una variable existente.","icon":"Variable","fields":[{"name":"name","label":"Nombre","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"value","label":"Valor","type":"json","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"variable.update"},
+    {"id":"variable.delete","category":"variables","categoryName":"Variables","title":"Eliminar variable","description":"Elimina una variable existente.","icon":"Trash2","fields":[{"name":"name","label":"Nombre","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":null,"outputs":[],"handlerKey":"variable.delete"},
+    {"id":"clipboard.write","category":"clipboard","categoryName":"Portapapeles","title":"Escribir portapapeles","description":"Reemplaza el texto del portapapeles.","icon":"Clipboard","fields":[{"name":"text","label":"Texto","type":"multiline","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"clipboard.write"},
+    {"id":"clipboard.read","category":"clipboard","categoryName":"Portapapeles","title":"Leer portapapeles","description":"Lee el texto del portapapeles.","icon":"Clipboard","fields":[{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"clipboard.read"},
+    {"id":"clipboard.clear","category":"clipboard","categoryName":"Portapapeles","title":"Limpiar portapapeles","description":"Vacía el portapapeles.","icon":"Clipboard","fields":[],"defaults":{},"output":null,"outputs":[],"handlerKey":"clipboard.clear"},
+    {"id":"system.currentUser","category":"system","categoryName":"Sistema","title":"Usuario actual","description":"Obtiene el usuario del sistema.","icon":"User","fields":[{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"system.current_user"},
+    {"id":"system.currentDate","category":"system","categoryName":"Sistema","title":"Fecha actual","description":"Obtiene la fecha actual con formato explícito.","icon":"Calendar","fields":[{"name":"format","label":"Formato","type":"select","required":false,"options":["iso","yyyy-MM-dd","dd/MM/yyyy"]},{"name":"includeTime","label":"Incluir hora","type":"boolean","required":false},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{"format":"iso","includeTime":false},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"system.current_date"},
+    {"id":"system.setBaseResolution","category":"system","categoryName":"Sistema","title":"Resolución base","description":"Define la resolución usada para escalar coordenadas.","icon":"AppWindow","fields":[{"name":"width","label":"Ancho","type":"integer","required":true,"min":1},{"name":"height","label":"Alto","type":"integer","required":true,"min":1}],"defaults":{"width":1920,"height":1080},"output":null,"outputs":[],"handlerKey":"system.set_base_resolution"},
+    {"id":"mouse.position","category":"mouse","categoryName":"Mouse","title":"Posición del mouse","description":"Obtiene la posición escalada del puntero.","icon":"MousePointer2","fields":[{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"mouse.position"},
+    {"id":"mouse.rightClick","category":"mouse","categoryName":"Mouse","title":"Click derecho","description":"Hace click derecho, opcionalmente en una posición.","icon":"Mouse","fields":[{"name":"x","label":"X","type":"integer","required":false},{"name":"y","label":"Y","type":"integer","required":false}],"defaults":{},"output":null,"outputs":[],"handlerKey":"mouse.right_click"},
+    {"id":"flow.comment","category":"flow","categoryName":"Flujo","title":"Comentario","description":"Documenta el flujo sin producir efectos.","icon":"MessageSquare","fields":[{"name":"text","label":"Comentario","type":"multiline","required":false}],"defaults":{"text":""},"output":null,"outputs":[],"handlerKey":"flow.comment"},
+    {"id":"flow.group","category":"flow","categoryName":"Flujo","title":"Grupo","description":"Agrupa y ejecuta una secuencia anidada.","icon":"Folder","fields":[],"defaults":{},"output":null,"outputs":[],"handlerKey":"flow.group","slots":["body"]},
+    {"id":"flow.if","category":"flow","categoryName":"Flujo","title":"Si","description":"Ejecuta una rama según una condición segura.","icon":"Variable","fields":[{"name":"condition","label":"Condición","type":"condition","required":true}],"defaults":{"condition":{"combinator":"all","clauses":[{"left":"","operator":"eq","right":""}]}},"output":null,"outputs":[],"handlerKey":"flow.if","slots":["then","else"]},
+    {"id":"flow.forRange","category":"flow","categoryName":"Flujo","title":"Repetir rango","description":"Recorre un rango inclusivo con paso explícito.","icon":"Variable","fields":[{"name":"start","label":"Inicio","type":"integer","required":true},{"name":"end","label":"Fin","type":"integer","required":true},{"name":"step","label":"Paso","type":"integer","required":true},{"name":"currentVariable","label":"Variable actual","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"maxIterations","label":"Máximo de iteraciones","type":"integer","required":true,"min":1,"max":10000}],"defaults":{"start":1,"end":1,"step":1,"currentVariable":"current","maxIterations":1000},"output":null,"outputs":[],"handlerKey":"flow.for_range","slots":["body"]},
+    {"id":"flow.forEach","category":"flow","categoryName":"Flujo","title":"Para cada elemento","description":"Recorre los elementos de un arreglo JSON.","icon":"Variable","fields":[{"name":"items","label":"Elementos","type":"json","required":true},{"name":"itemVariable","label":"Variable de elemento","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"indexVariable","label":"Variable de índice","type":"variable","required":false,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"},{"name":"maxIterations","label":"Máximo de iteraciones","type":"integer","required":true,"min":1,"max":10000}],"defaults":{"items":[],"itemVariable":"item","maxIterations":1000},"output":null,"outputs":[],"handlerKey":"flow.for_each","slots":["body"]},
+    {"id":"flow.while","category":"flow","categoryName":"Flujo","title":"Mientras","description":"Repite mientras se cumpla una condición segura.","icon":"Variable","fields":[{"name":"condition","label":"Condición","type":"condition","required":true},{"name":"maxIterations","label":"Máximo de iteraciones","type":"integer","required":true,"min":1,"max":10000}],"defaults":{"condition":{"combinator":"all","clauses":[{"left":"","operator":"eq","right":""}]},"maxIterations":1000},"output":null,"outputs":[],"handlerKey":"flow.while","slots":["body"]},
+    {"id":"flow.tryCatch","category":"flow","categoryName":"Flujo","title":"Intentar y recuperar","description":"Recupera errores ordinarios de una secuencia.","icon":"Variable","fields":[{"name":"errorVariable","label":"Variable de error","type":"variable","required":false,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{},"output":null,"outputs":[],"handlerKey":"flow.try_catch","slots":["try","catch"]},
+    {"id":"http.request","category":"http","categoryName":"HTTP","title":"Solicitud HTTP","description":"Envía una solicitud HTTP y devuelve la respuesta estructurada.","icon":"Network","fields":[{"name":"method","label":"Método","type":"select","required":true,"options":["GET","POST","PUT","PATCH","DELETE"]},{"name":"url","label":"URL","type":"text","required":true},{"name":"headers","label":"Encabezados JSON","type":"json","required":false},{"name":"query","label":"Parámetros de consulta JSON","type":"json","required":false},{"name":"body","label":"Cuerpo JSON o texto","type":"json","required":false},{"name":"timeoutMs","label":"Tiempo límite (ms)","type":"number","required":true,"min":1,"max":3600000},{"name":"outputVariable","label":"Variable de salida","type":"variable","required":true,"pattern":"^[A-Za-z_][A-Za-z0-9_]*$"}],"defaults":{"method":"GET","headers":{},"query":{},"timeoutMs":30000},"output":{"field":"outputVariable","type":"value"},"outputs":[{"field":"outputVariable","type":"value"}],"handlerKey":"http.request"},
+    {"id":"workflow.run","category":"workflow","categoryName":"Flujos","title":"Ejecutar flujo","description":"Ejecuta otro bot de AutoClick desde un archivo completo.","icon":"Workflow","fields":[{"name":"path","label":"Archivo del bot","type":"file","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"workflow.run"},
+    {"id":"flow.goTo","category":"flow","categoryName":"Flujo","title":"Ir a bloque","description":"Continúa en otro bloque de la misma secuencia ordenada.","icon":"CornerDownRight","fields":[{"name":"targetNodeId","label":"Bloque destino en esta secuencia","type":"text","required":true}],"defaults":{},"output":null,"outputs":[],"handlerKey":"flow.go_to"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "Region": "us-east-1",
+  "ApiUrl": "",
+  "UserPoolId": "",
+  "DesktopClientId": "",
+  "WebClientId": "",
+  "WorkerTrustAnchorArn": "",
+  "WorkerProfileArn": "",
+  "WorkerRoleArn": ""
+}

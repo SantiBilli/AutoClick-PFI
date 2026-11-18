@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "model": "autoclick-8b:entrega33",
+  "archive_sha256": "039bbf34b2e0f1943694ad9bc27b321c871f2896b411695db25aafc75bf14818",
+  "parts": [
+    {
+      "name": "autoclick-8b-entrega33.zip.001",
+      "size": 100000000,
+      "sha256": "090e5e0e401518fafb90e5fbe4f96d7e235a79bdcd23d21d047b87038ef03d8a"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.002",
+      "size": 100000000,
+      "sha256": "823c9a4366ef83b374e379ac1f4f228c6eff65c0c90a5d891478db00ebc903e3"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.003",
+      "size": 100000000,
+      "sha256": "8edddce0377a74081279808012c94cc493401d13dbea2592360118d43ddc4393"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.004",
+      "size": 100000000,
+      "sha256": "193aae952a7cb31428aac6a3230ffff7b8e4185e48affabf987ecd8544ab3ced"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.005",
+      "size": 100000000,
+      "sha256": "526455ec74224599fb0c0d5fe67cd843045f051b71bd82328871f4ab7291d4f3"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.006",
+      "size": 100000000,
+      "sha256": "f29ff9c09ea2881050b821e3778f4be3f5924b628dfa4da97db97daa36dacd96"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.007",
+      "size": 100000000,
+      "sha256": "b7c5d1703f82178efc21a67b4fed73625d049c610f7a4a7956436521bbba7355"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.008",
+      "size": 100000000,
+      "sha256": "3dc25036f5acac22aa3b4292675bdf9f3e947a4df3142b046cffcafb8123d99d"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.009",
+      "size": 100000000,
+      "sha256": "5f01d50f83985e104f75355071c0ba6b97ff7a312060bc25b99aee2f906a2252"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.010",
+      "size": 100000000,
+      "sha256": "b8142a11719b6dc76e0af595e149a7c79b1860d6a1a6c8f925ecd2338f60119c"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.011",
+      "size": 100000000,
+      "sha256": "b2dd81b642ccce3e87260488efc85f81bd62010db7e0208a7795f150ead536e1"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.012",
+      "size": 100000000,
+      "sha256": "673407408a32556f01db52b7ce48c896cff0dba9d5ae0c551e8c995e9ba8f931"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.013",
+      "size": 100000000,
+      "sha256": "ed6d88af757a0c95028a473615f6dfb0818dfd759090cc924b93c2fe914f3cf5"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.014",
+      "size": 100000000,
+      "sha256": "7d13dad9f3f658b7513520446503040c44464e220a2ba1e3aeadfbc052fdfeaf"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.015",
+      "size": 100000000,
+      "sha256": "2aa047b95666d6b8b8cbeb3c81ef613d7bcdb71095c78c4bfd7875303545233a"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.016",
+      "size": 100000000,
+      "sha256": "531469bd263e126f9afa7d1c33b9f159dbf6ba5382bf9a364ebe32c05ccf2edc"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.017",
+      "size": 100000000,
+      "sha256": "7299de282bd071d67bfd809ce17909df4453c943a4869cee22eff02daaead4f5"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.018",
+      "size": 100000000,
+      "sha256": "f7b1b454ad3fb542f2f5f587c2077d9e79a90450318a093c7d4929e59fa8ba39"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.019",
+      "size": 100000000,
+      "sha256": "910170e866ebc4d54bd15f4013f91bdbe159bf680d867839c745625ecbad4784"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.020",
+      "size": 100000000,
+      "sha256": "f317144e90fd523fab41562001bede561d7e03663b4f8787ada1997447a13c0c"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.021",
+      "size": 100000000,
+      "sha256": "a54ef5caeacc04803b0b727216d53609e079401252f178cef1c73fae9642b169"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.022",
+      "size": 100000000,
+      "sha256": "401a9da234ce0c8b2d6db3548dea875f7d61289729b16518c9fc0e6eefe650f7"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.023",
+      "size": 100000000,
+      "sha256": "c624e782a95620408e619d7ddac49b9ba1266c763c274f0ba2d9f83548d80475"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.024",
+      "size": 100000000,
+      "sha256": "72752d43d9fafe0374e3c719aba4dc2927583f64bdd0d6a40ab71e247696fbff"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.025",
+      "size": 100000000,
+      "sha256": "4123e2c4c9a323c56fb233004e366b60bf881982f95fb0b9af61c03b72700a53"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.026",
+      "size": 100000000,
+      "sha256": "5f0f12ae853c891914dae5edbc6e9738354a069394b48c559e5b1179a0ff148f"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.027",
+      "size": 100000000,
+      "sha256": "6405632827d5364b67ebb2670b361d1a0431ee121d66a07ac88b4770e7db3379"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.028",
+      "size": 100000000,
+      "sha256": "9c828c5c58a58d32a3cca7b800641000afc27297f173e61d0937c3b0c51f7c83"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.029",
+      "size": 100000000,
+      "sha256": "464357a62b008858b0dfd634d47e449a70bc68a716ccd547aa1954a9a183589c"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.030",
+      "size": 100000000,
+      "sha256": "61902bcbb51b45c81ac79ef03a26b5242fdcffdbf0e786f41f3e79be136c9031"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.031",
+      "size": 100000000,
+      "sha256": "a1f11b2da0961667bb5541160bd19f08758a75958eb4fa54ffaba1991b3eede5"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.032",
+      "size": 100000000,
+      "sha256": "6246e31d980d8036495e69c28b13fd30329e46ca3fc19ba82ec0738225a4392c"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.033",
+      "size": 100000000,
+      "sha256": "728f5022f1c1210b709c4f4fd54f3a125b2e7f50bb9b0d578511bbe48c6dccb7"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.034",
+      "size": 100000000,
+      "sha256": "6b08709ac0c715d32b70f62d8e7afb98121775cc4fc4ffe3803cebe524667dee"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.035",
+      "size": 100000000,
+      "sha256": "8d168a476226bc80e23db2853d9e92a7539739e628fad1ce149dd0b4ad6472b0"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.036",
+      "size": 100000000,
+      "sha256": "e7b7764da4bf4da0fbd496671a20fb205215dd8787301f32c27e7c5cd2126510"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.037",
+      "size": 100000000,
+      "sha256": "d7e7c6bc8a9e5cbacb6ed00d9767f931b6e202a719d59459365bf3169b5629f2"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.038",
+      "size": 100000000,
+      "sha256": "3285cbf477a49dd15f1a30fafd0daaf018bf8effdca13749a5e019fe0de115eb"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.039",
+      "size": 100000000,
+      "sha256": "997bc721c07816b89b251db13f6e457c0ba0648875b75c11011817f3d2e3b303"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.040",
+      "size": 100000000,
+      "sha256": "833fd0f9aee71d5c1637986c192ced4a445ccc7379af6a92f3c05afa1a064807"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.041",
+      "size": 100000000,
+      "sha256": "e31bf597026bfd0b799756b899a1a6e87d6bcdbe19721ddd8684ec713c3be2d4"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.042",
+      "size": 100000000,
+      "sha256": "b30cb14fcc172ab3481df6c2b42a9fba636a055b80ab5a63f2a99d2173cb99e2"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.043",
+      "size": 100000000,
+      "sha256": "5e67552b3c048598e3713ebda89ccaa4643959a000073fe9894efd0072a68a95"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.044",
+      "size": 100000000,
+      "sha256": "93d9e312f044024a806cd498b2e1dc1b4156e4c81307a933d5f5da69c4cb5b6f"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.045",
+      "size": 100000000,
+      "sha256": "98aae578de235a5694ef8b42c438269ce24bf897007ae577a43e1994f3ad3c4e"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.046",
+      "size": 100000000,
+      "sha256": "4a6db26f9d29f1a938384ff5da045b0718c510e955d9db8ffe9ff1589658903f"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.047",
+      "size": 100000000,
+      "sha256": "f6f625d08c1deefdcf42275e5cf6614023fc7ac1d275c2844d89de08dada4a26"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.048",
+      "size": 100000000,
+      "sha256": "04a8020d990a0c9ef5103d399ebf07d0f11f5133b31b2e660f8e9fc56c725dc9"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.049",
+      "size": 100000000,
+      "sha256": "f09b96df2d5c51e0fa1ccadcb861d72b28442ff5b05e0f852cf2009980366b01"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.050",
+      "size": 100000000,
+      "sha256": "f272e09fe281e01beed7a5a368a0bab707fe70df6bd9ada5d4db6d8927eb9fc3"
+    },
+    {
+      "name": "autoclick-8b-entrega33.zip.051",
+      "size": 27805121,
+      "sha256": "bef96f34bd3278953c1d661d812995a0543aee961309d9e62ea11d7b29015a56"
+    }
+  ],
+  "files": [
+    {
+      "path": "ollama-models/manifests/registry.ollama.ai/library/autoclick-8b/entrega33",
+      "size": 591,
+      "sha256": "313c90d76ddff90169153fd8bd148141f842bec0094d2c6b79aa789934d5b746"
+    },
+    {
+      "path": "ollama-models/metadata/sha256-52c86b2590ffe60911cd79bbecdd4d89fc8722ffd8e37d0dab395a17571ad154.json",
+      "size": 6254,
+      "sha256": "c6a1cbc0568e55d9268b274c42da5f746335074aab78e78372368c4e1198f322"
+    },
+    {
+      "path": "ollama-models/blobs/sha256-d2187e8e0fcedc92f0613fb38758f48644de46e8d3888fe153b82048545b5ad1",
+      "size": 115,
+      "sha256": "d2187e8e0fcedc92f0613fb38758f48644de46e8d3888fe153b82048545b5ad1"
+    },
+    {
+      "path": "ollama-models/blobs/sha256-52c86b2590ffe60911cd79bbecdd4d89fc8722ffd8e37d0dab395a17571ad154",
+      "size": 5027784192,
+      "sha256": "52c86b2590ffe60911cd79bbecdd4d89fc8722ffd8e37d0dab395a17571ad154"
+    },
+    {
+      "path": "ollama-models/blobs/sha256-77466dc3349b7e5c81d39ead73f0b28df7fad5e33d7213da41470d99fa5057cb",
+      "size": 53,
+      "sha256": "77466dc3349b7e5c81d39ead73f0b28df7fad5e33d7213da41470d99fa5057cb"
+    },
+    {
+      "path": "LICENSE-Qwen3-8B.txt",
+      "size": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "path": "NOTICE-entrega33.txt",
+      "size": 817,
+      "sha256": "533838b32aeb6ba264a696eed2de84d4022bed0480b150ec38389076c323ba87"
+    }
+  ],
+  "download_url": "https://drive.google.com/file/d/1xm-bloKJpJChrqb5f4J_Slai-HL4LCCJ/view?usp=drivesdk",
+  "archive_name": "autoclick-8b-entrega33.zip",
+  "archive_size": 5027805121
+}

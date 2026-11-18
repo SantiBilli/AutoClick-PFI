@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "maxMessageCodePoints": 64000,
+  "maxAiStateBytes": 524288
+}
